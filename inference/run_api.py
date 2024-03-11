@@ -19,6 +19,17 @@ from make_datasets.utils import extract_diff
 from argparse import ArgumentParser
 import logging
 
+'''
+Commands:
+
+export ANTHROPIC_API_KEY=<your key>
+
+python inference/run_api.py --dataset_name_or_path princeton-nlp/SWE-bench_oracle --model_name_or_path gpt-3.5-turbo-1106 --output_dir ./outputs
+
+'''
+
+
+
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 logger = logging.getLogger(__name__)
 dotenv.load_dotenv()

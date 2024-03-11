@@ -1,9 +1,9 @@
 #!/bin/bash
-python run_evaluation.py \
-    --predictions_path "<path to predictions (.json)>" \
-    --swe_bench_tasks "<path to `swe-bench.json`>" \
-    --log_dir "<path to folder>" \
-    --testbed "<path to folder>" \
+python harness/run_evaluation.py \
+    --predictions_path "outputs/gpt-3.5-turbo-1106__SWE-bench_oracle__test.jsonl" \
+    --swe_bench_tasks "swe_bench_tasks.json" \
+    --log_dir "outputs" \
+    --testbed "testbed" \
     --skip_existing \
     --timeout 900 \
     --verbose

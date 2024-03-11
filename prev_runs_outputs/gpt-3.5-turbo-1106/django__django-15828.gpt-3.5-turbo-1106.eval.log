@@ -1,0 +1,28 @@
+Task Metadata:
+	- Instance ID: django__django-15828
+	- Testbed: /Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpxhdwcj5k/django__django__4.2
+	- Virtual Env.: django__django__4.2
+	- Evaluation Model: gpt-3.5-turbo-1106
+>>>>> Patch Apply Failed; (pred_try)
+Output:
+Checking patch django/contrib/postgres/constraints.py...
+error: while searching for:
+    def __repr__(self):
+        return "<%s: index_type=%s expressions=%s name=%s%s%s%s%s%s>" % (
+            self.__class__.__qualname__,
+            repr(self.index_type),
+            repr(self.expressions),
+            repr(self.name),
+            "" if self.condition is None else " condition=%s" % self.condition,
+
+error: patch failed: django/contrib/postgres/constraints.py:183
+error: django/contrib/postgres/constraints.py: patch does not apply
+>>>>> Patch Apply Failed; (pred_minimal_try)
+Output:
+Checking patch django/contrib/postgres/constraints.py...
+Hunk #2 succeeded at 195 (offset -3 lines).
+error: while searching for:
+                if (self.condition & Exists(queryset.filter(self.condition))).check(
+
+error: patch failed: django/contrib/postgres/constraints.py:231
+error: django/contrib/postgres/constraints.py: patch does not apply

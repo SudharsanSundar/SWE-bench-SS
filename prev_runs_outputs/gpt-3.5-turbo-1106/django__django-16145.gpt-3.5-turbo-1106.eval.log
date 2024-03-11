@@ -1,0 +1,32 @@
+Task Metadata:
+	- Instance ID: django__django-16145
+	- Testbed: /Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpxhdwcj5k/django__django__4.2
+	- Virtual Env.: django__django__4.2
+	- Evaluation Model: gpt-3.5-turbo-1106
+>>>>> Patch Apply Failed; (pred_try)
+Output:
+/Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpxhdwcj5k/temp_django__django-16145_pred_try.patch:8: trailing whitespace.
+            ( 
+Checking patch django/core/management/commands/runserver.py...
+Hunk #1 succeeded at 138 (offset -1 lines).
+error: while searching for:
+                "port": self.port,
+                "quit_command": quit_command,
+            }
+        )
+        )
+
+        try:
+
+error: patch failed: django/core/management/commands/runserver.py:150
+error: django/core/management/commands/runserver.py: patch does not apply
+>>>>> Patch Apply Failed; (pred_minimal_try)
+Output:
+Checking patch django/core/management/commands/runserver.py...
+Hunk #1 succeeded at 141 (offset -1 lines).
+error: while searching for:
+        )
+        )
+
+error: patch failed: django/core/management/commands/runserver.py:153
+error: django/core/management/commands/runserver.py: patch does not apply

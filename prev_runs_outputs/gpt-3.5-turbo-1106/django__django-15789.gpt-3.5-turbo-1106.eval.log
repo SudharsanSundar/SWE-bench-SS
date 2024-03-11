@@ -1,0 +1,30 @@
+Task Metadata:
+	- Instance ID: django__django-15789
+	- Testbed: /Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpxhdwcj5k/django__django__4.2
+	- Virtual Env.: django__django__4.2
+	- Evaluation Model: gpt-3.5-turbo-1106
+>>>>> Patch Apply Failed; (pred_try)
+Output:
+Checking patch django/utils/html.py...
+error: while searching for:
+    """
+    Escape all the HTML/XML special characters with their unicode escapes, so
+    value is safe to be output anywhere except for inside a tag attribute. Wrap
+    the escaped JSON in a script tag.
+    """
+    from django.core.serializers.json import DjangoJSONEncoder
+    json_str = json.dumps(value, cls=encoder).translate(_json_script_escapes)
+
+error: patch failed: django/utils/html.py:62
+error: django/utils/html.py: patch does not apply
+>>>>> Patch Apply Failed; (pred_minimal_try)
+Output:
+Checking patch django/utils/html.py...
+error: while searching for:
+    the escaped JSON in a script tag.
+    """
+    from django.core.serializers.json import DjangoJSONEncoder
+    json_str = json.dumps(value, cls=encoder).translate(_json_script_escapes)
+
+error: patch failed: django/utils/html.py:65
+error: django/utils/html.py: patch does not apply

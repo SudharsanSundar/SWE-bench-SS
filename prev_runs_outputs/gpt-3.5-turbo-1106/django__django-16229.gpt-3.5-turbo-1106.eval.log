@@ -1,0 +1,162 @@
+Task Metadata:
+	- Instance ID: django__django-16229
+	- Testbed: /Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpxhdwcj5k/django__django__4.2
+	- Virtual Env.: django__django__4.2
+	- Evaluation Model: gpt-3.5-turbo-1106
+>>>>> Applied Patch (pred_try)
+>>>>> Applied Patch (pred_try)
+Installation Command: source /Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpjw_brqx5/miniconda3/bin/activate django__django__4.2 && echo 'activate successful' && python -m pip install -e .
+Std. Output: activate successful
+Obtaining file:///Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpxhdwcj5k/django__django__4.2
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Installing backend dependencies: started
+  Installing backend dependencies: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: asgiref>=3.5.2 in /Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpjw_brqx5/miniconda3/lib/python3.11/site-packages (from Django==4.2.dev20221118091331) (3.7.2)
+Requirement already satisfied: sqlparse>=0.2.2 in /Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpjw_brqx5/miniconda3/lib/python3.11/site-packages (from Django==4.2.dev20221118091331) (0.4.4)
+Building wheels for collected packages: Django
+  Building editable for Django (pyproject.toml): started
+  Building editable for Django (pyproject.toml): finished with status 'done'
+  Created wheel for Django: filename=Django-4.2.dev20221118091331-0.editable-py3-none-any.whl size=27166 sha256=da2d0965afa9fdaf9b0ea64e83e6b7fea3fc183c25040f66549ae6b441557d3d
+  Stored in directory: /private/var/folders/3m/3dmm_ry91nqff_w2hrcv3zfc0000gn/T/pip-ephem-wheel-cache-hl6al1ft/wheels/c3/73/74/0d08e57c7518b6a640ce55882f0e7b0c82e7e780c365f0ce12
+Successfully built Django
+Installing collected packages: Django
+  Attempting uninstall: Django
+    Found existing installation: Django 4.2.dev20221103191119
+    Uninstalling Django-4.2.dev20221103191119:
+      Successfully uninstalled Django-4.2.dev20221103191119
+Successfully installed Django-4.2.dev20221118091331
+
+Std. Error: 
+
+>>>>> Init Succeeded
+>>>>> Applied Patch (test)
+>>>>> Applied Patch (pred)
+Test Script: source /Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpjw_brqx5/miniconda3/bin/activate django__django__4.2 && echo 'activate successful' && ./tests/runtests.py --verbosity 2 forms_tests.tests.tests;
+Output:
+activate successful
+Testing against Django installed in '/Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpxhdwcj5k/django__django__4.2/django' with up to 8 processes
+Importing application forms_tests
+Found 23 test(s).
+Skipping setup of unused database(s): other.
+Operations to perform:
+  Synchronize unmigrated apps: auth, contenttypes, forms_tests, messages, sessions, staticfiles
+  Apply all migrations: admin, sites
+Synchronizing apps without migrations:
+  Creating tables...
+    Creating table django_content_type
+    Creating table auth_permission
+    Creating table auth_group
+    Creating table auth_user
+    Creating table django_session
+    Creating table forms_tests_boundarymodel
+    Creating table forms_tests_defaults
+    Creating table forms_tests_choicemodel
+    Creating table forms_tests_choiceoptionmodel
+    Creating table forms_tests_choicefieldmodel
+    Creating table forms_tests_optionalmultichoicemodel
+    Creating table forms_tests_filemodel
+    Creating table forms_tests_article
+    Running deferred SQL...
+Running migrations:
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying sites.0001_initial... OK
+  Applying sites.0002_alter_domain_unique... OK
+System check identified no issues (0 silenced).
+Importing application forms_tests
+Importing application forms_tests
+Importing application forms_tests
+Importing application forms_tests
+Importing application forms_tests
+Importing application forms_tests
+Importing application forms_tests
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+test_boundary_conditions (forms_tests.tests.tests.FormsModelTestCase.test_boundary_conditions) ... ok
+test_formfield_initial (forms_tests.tests.tests.FormsModelTestCase.test_formfield_initial) ... ok
+test_unicode_filename (forms_tests.tests.tests.FormsModelTestCase.test_unicode_filename) ... ok
+test_empty_queryset_return (forms_tests.tests.tests.TestTicket14567.test_empty_queryset_return)
+If a model's ManyToManyField has blank=True and is saved with no data, ... ok
+test_invalid_loading_order (forms_tests.tests.tests.RelatedModelFormTests.test_invalid_loading_order)
+Test for issue 10405 ... ok
+test_valid_loading_order (forms_tests.tests.tests.RelatedModelFormTests.test_valid_loading_order)
+Test for issue 10405 ... ok
+test_empty_field_char (forms_tests.tests.tests.EmptyLabelTestCase.test_empty_field_char) ... ok
+test_empty_field_char_none (forms_tests.tests.tests.EmptyLabelTestCase.test_empty_field_char_none) ... ok
+test_empty_field_integer (forms_tests.tests.tests.EmptyLabelTestCase.test_empty_field_integer) ... ok
+test_get_display_value_on_none (forms_tests.tests.tests.EmptyLabelTestCase.test_get_display_value_on_none) ... ok
+test_html_rendering_of_prepopulated_models (forms_tests.tests.tests.EmptyLabelTestCase.test_html_rendering_of_prepopulated_models) ... ok
+test_save_empty_label_forms (forms_tests.tests.tests.EmptyLabelTestCase.test_save_empty_label_forms) ... ok
+test_m2m_field_exclusion (forms_tests.tests.tests.ManyToManyExclusionTestCase.test_m2m_field_exclusion) ... ok
+test_callable_default_hidden_widget_value_not_overridden (forms_tests.tests.tests.ModelFormCallableModelDefault.test_callable_default_hidden_widget_value_not_overridden) ... FAIL
+test_callable_initial_value (forms_tests.tests.tests.ModelFormCallableModelDefault.test_callable_initial_value)
+The initial value for a callable default returning a queryset is the ... ok
+test_initial_instance_value (forms_tests.tests.tests.ModelFormCallableModelDefault.test_initial_instance_value)
+Initial instances for model fields may also be instances (refs #7287) ... ok
+test_no_empty_option (forms_tests.tests.tests.ModelFormCallableModelDefault.test_no_empty_option)
+If a model's ForeignKey has blank=False and a default, no empty option ... ok
+test_empty_field_char (forms_tests.tests.tests.Jinja2EmptyLabelTestCase.test_empty_field_char) ... ok
+test_empty_field_char_none (forms_tests.tests.tests.Jinja2EmptyLabelTestCase.test_empty_field_char_none) ... ok
+test_empty_field_integer (forms_tests.tests.tests.Jinja2EmptyLabelTestCase.test_empty_field_integer) ... ok
+test_get_display_value_on_none (forms_tests.tests.tests.Jinja2EmptyLabelTestCase.test_get_display_value_on_none) ... ok
+test_html_rendering_of_prepopulated_models (forms_tests.tests.tests.Jinja2EmptyLabelTestCase.test_html_rendering_of_prepopulated_models) ... ok
+test_save_empty_label_forms (forms_tests.tests.tests.Jinja2EmptyLabelTestCase.test_save_empty_label_forms) ... ok
+
+======================================================================
+FAIL: test_callable_default_hidden_widget_value_not_overridden (forms_tests.tests.tests.ModelFormCallableModelDefault.test_callable_default_hidden_widget_value_not_overridden)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpjw_brqx5/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpjw_brqx5/miniconda3/lib/python3.11/unittest/case.py", line 623, in run
+    self._callTestMethod(testMethod)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpjw_brqx5/miniconda3/lib/python3.11/unittest/case.py", line 579, in _callTestMethod
+    if method() is not None:
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpxhdwcj5k/django__django__4.2/tests/forms_tests/tests/tests.py", line 225, in test_callable_default_hidden_widget_value_not_overridden
+    self.assertHTMLEqual(
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpxhdwcj5k/django__django__4.2/django/test/testcases.py", line 1045, in assertHTMLEqual
+    self.fail(self._formatMessage(msg, standardMsg))
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpjw_brqx5/miniconda3/lib/python3.11/unittest/case.py", line 703, in fail
+    raise self.failureException(msg)
+    ^^^^^^^^^^^^^^^^^
+AssertionError: <p>
+<label for="id_int_field">
+Int field:
+</label><input id="id_int_field" name= [truncated]... != <p>
+<label for="id_int_field">
+Int field:
+</label><input id="id_int_field" name= [truncated]...
+Diff is 1070 characters long. Set self.maxDiff to None to see it.
+
+----------------------------------------------------------------------
+Ran 23 tests in 0.931s
+
+FAILED (failures=1)
+Destroying test database for alias 'default' ('default_1.sqlite3')...
+Destroying test database for alias 'default' ('default_2.sqlite3')...
+Destroying test database for alias 'default' ('default_3.sqlite3')...
+Destroying test database for alias 'default' ('default_4.sqlite3')...
+Destroying test database for alias 'default' ('default_5.sqlite3')...
+Destroying test database for alias 'default' ('default_6.sqlite3')...
+Destroying test database for alias 'default' ('default_7.sqlite3')...
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+>>>>> Some Tests Failed

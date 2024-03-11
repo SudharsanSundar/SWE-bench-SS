@@ -1,0 +1,166 @@
+Task Metadata:
+	- Instance ID: django__django-16366
+	- Testbed: /Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpxhdwcj5k/django__django__4.2
+	- Virtual Env.: django__django__4.2
+	- Evaluation Model: gpt-3.5-turbo-1106
+>>>>> Applied Patch (pred_try)
+>>>>> Applied Patch (pred_try)
+Installation Command: source /Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpjw_brqx5/miniconda3/bin/activate django__django__4.2 && echo 'activate successful' && python -m pip install -e .
+Std. Output: activate successful
+Obtaining file:///Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpxhdwcj5k/django__django__4.2
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Installing backend dependencies: started
+  Installing backend dependencies: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: asgiref>=3.5.2 in /Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpjw_brqx5/miniconda3/lib/python3.11/site-packages (from Django==4.2.dev20221207102313) (3.7.2)
+Requirement already satisfied: sqlparse>=0.2.2 in /Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpjw_brqx5/miniconda3/lib/python3.11/site-packages (from Django==4.2.dev20221207102313) (0.4.4)
+Building wheels for collected packages: Django
+  Building editable for Django (pyproject.toml): started
+  Building editable for Django (pyproject.toml): finished with status 'done'
+  Created wheel for Django: filename=Django-4.2.dev20221207102313-0.editable-py3-none-any.whl size=27192 sha256=a9939159173705b4fceed6c71e206039de909e58d4837c246a3ba6e405bc3ed4
+  Stored in directory: /private/var/folders/3m/3dmm_ry91nqff_w2hrcv3zfc0000gn/T/pip-ephem-wheel-cache-h9jhd8d8/wheels/c3/73/74/0d08e57c7518b6a640ce55882f0e7b0c82e7e780c365f0ce12
+Successfully built Django
+Installing collected packages: Django
+  Attempting uninstall: Django
+    Found existing installation: Django 4.2.dev20221217074637
+    Uninstalling Django-4.2.dev20221217074637:
+      Successfully uninstalled Django-4.2.dev20221217074637
+Successfully installed Django-4.2.dev20221207102313
+
+Std. Error: 
+
+>>>>> Init Succeeded
+>>>>> Applied Patch (test)
+>>>>> Applied Patch (pred)
+Test Script: source /Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpjw_brqx5/miniconda3/bin/activate django__django__4.2 && echo 'activate successful' && ./tests/runtests.py --verbosity 2 backends.sqlite.tests;
+Output:
+activate successful
+Testing against Django installed in '/Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpxhdwcj5k/django__django__4.2/django' with up to 8 processes
+Importing application backends
+Found 18 test(s).
+Skipping setup of unused database(s): other.
+Operations to perform:
+  Synchronize unmigrated apps: auth, backends, contenttypes, messages, sessions, staticfiles
+  Apply all migrations: admin, sites
+Synchronizing apps without migrations:
+  Creating tables...
+    Creating table django_content_type
+    Creating table auth_permission
+    Creating table auth_group
+    Creating table auth_user
+    Creating table django_session
+    Creating table backends_square
+    Creating table backends_person
+    Creating table backends_schoolclass
+    Creating table backends_verylongmodelnamezzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz
+    Creating table backends_tag
+    Creating table CaseSensitive_Post
+    Creating table backends_reporter
+    Creating table backends_article
+    Creating table backends_item
+    Creating table backends_object
+    Creating table backends_objectreference
+    Creating table backends_objectselfreference
+    Creating table backends_circulara
+    Creating table backends_circularb
+    Creating table backends_rawdata
+    Creating table backends_author
+    Creating table backends_book
+    Creating table order
+    Running deferred SQL...
+Running migrations:
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying sites.0001_initial... OK
+  Applying sites.0002_alter_domain_unique... OK
+System check identified no issues (0 silenced).
+Importing application backends
+Importing application backends
+Importing application backends
+Importing application backends
+Importing application backends
+Importing application backends
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+Cloning test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+test_parameter_escaping (backends.sqlite.tests.EscapingChecks.test_parameter_escaping) ... ok
+test_parameter_escaping (backends.sqlite.tests.EscapingChecksDebug.test_parameter_escaping) ... ok
+test_large_number_of_parameters (backends.sqlite.tests.LastExecutedQueryTest.test_large_number_of_parameters) ... ok
+test_no_interpolation (backends.sqlite.tests.LastExecutedQueryTest.test_no_interpolation) ... ok
+test_parameter_quoting (backends.sqlite.tests.LastExecutedQueryTest.test_parameter_quoting) ... ok
+test_aggregation (backends.sqlite.tests.Tests.test_aggregation)
+Raise NotSupportedError when aggregating on date/time fields. ... ok
+test_check_database_version_supported (backends.sqlite.tests.Tests.test_check_database_version_supported) ... FAIL
+test_distinct_aggregation (backends.sqlite.tests.Tests.test_distinct_aggregation) ... ok
+test_distinct_aggregation_multiple_args_no_distinct (backends.sqlite.tests.Tests.test_distinct_aggregation_multiple_args_no_distinct) ... ok
+test_memory_db_test_name (backends.sqlite.tests.Tests.test_memory_db_test_name)
+A named in-memory db should be allowed where supported. ... ok
+test_pathlib_name (backends.sqlite.tests.Tests.test_pathlib_name) ... ok
+test_regexp_function (backends.sqlite.tests.Tests.test_regexp_function) ... ok
+test_autoincrement (backends.sqlite.tests.SchemaTests.test_autoincrement)
+auto_increment fields are created with the AUTOINCREMENT keyword ... ok
+test_constraint_checks_disabled_atomic_allowed (backends.sqlite.tests.SchemaTests.test_constraint_checks_disabled_atomic_allowed)
+SQLite schema editor is usable within an outer transaction as long as ... ok
+test_disable_constraint_checking_failure_disallowed (backends.sqlite.tests.SchemaTests.test_disable_constraint_checking_failure_disallowed)
+SQLite schema editor is not usable within an outer transaction if ... ok
+test_field_rename_inside_atomic_block (backends.sqlite.tests.SchemaTests.test_field_rename_inside_atomic_block)
+NotImplementedError is raised when a model field rename is attempted ... skipped 'Database has feature(s) supports_atomic_references_rename'
+test_table_rename_inside_atomic_block (backends.sqlite.tests.SchemaTests.test_table_rename_inside_atomic_block)
+NotImplementedError is raised when a table rename is attempted inside ... skipped 'Database has feature(s) supports_atomic_references_rename'
+test_database_sharing_in_threads (backends.sqlite.tests.ThreadSharing.test_database_sharing_in_threads) ... ok
+
+======================================================================
+FAIL: test_check_database_version_supported (backends.sqlite.tests.Tests.test_check_database_version_supported)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpjw_brqx5/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpjw_brqx5/miniconda3/lib/python3.11/unittest/case.py", line 623, in run
+    self._callTestMethod(testMethod)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpjw_brqx5/miniconda3/lib/python3.11/unittest/case.py", line 579, in _callTestMethod
+    if method() is not None:
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpjw_brqx5/miniconda3/lib/python3.11/unittest/mock.py", line 1375, in patched
+    return func(*newargs, **newkeywargs)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpxhdwcj5k/django__django__4.2/tests/backends/sqlite/tests.py", line 112, in test_check_database_version_supported
+    with self.assertRaisesMessage(NotSupportedError, msg):
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpjw_brqx5/miniconda3/lib/python3.11/contextlib.py", line 144, in __exit__
+    next(self.gen)
+  File "/Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpxhdwcj5k/django__django__4.2/django/test/testcases.py", line 888, in _assert_raises_or_warns_cm
+    with func(expected_exception) as cm:
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpjw_brqx5/miniconda3/lib/python3.11/unittest/case.py", line 262, in __exit__
+    self._raiseFailure("{} not raised".format(exc_name))
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpjw_brqx5/miniconda3/lib/python3.11/unittest/case.py", line 199, in _raiseFailure
+    raise self.test_case.failureException(msg)
+    ^^^^^^^^^^^^^^^^^
+AssertionError: NotSupportedError not raised
+
+----------------------------------------------------------------------
+Ran 18 tests in 1.503s
+
+FAILED (failures=1, skipped=2)
+Destroying test database for alias 'default' ('default_1.sqlite3')...
+Destroying test database for alias 'default' ('default_2.sqlite3')...
+Destroying test database for alias 'default' ('default_3.sqlite3')...
+Destroying test database for alias 'default' ('default_4.sqlite3')...
+Destroying test database for alias 'default' ('default_5.sqlite3')...
+Destroying test database for alias 'default' ('default_6.sqlite3')...
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+>>>>> Some Tests Failed

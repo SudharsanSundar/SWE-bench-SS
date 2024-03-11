@@ -1,0 +1,89 @@
+Task Metadata:
+	- Instance ID: django__django-16136
+	- Testbed: /Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpxhdwcj5k/django__django__4.2
+	- Virtual Env.: django__django__4.2
+	- Evaluation Model: gpt-3.5-turbo-1106
+>>>>> Applied Patch (pred_try)
+>>>>> Applied Patch (pred_try)
+Installation Command: source /Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpjw_brqx5/miniconda3/bin/activate django__django__4.2 && echo 'activate successful' && python -m pip install -e .
+Std. Output: activate successful
+Obtaining file:///Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpxhdwcj5k/django__django__4.2
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Installing backend dependencies: started
+  Installing backend dependencies: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: asgiref>=3.5.2 in /Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpjw_brqx5/miniconda3/lib/python3.11/site-packages (from Django==4.2.dev20220929112014) (3.7.2)
+Requirement already satisfied: sqlparse>=0.2.2 in /Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpjw_brqx5/miniconda3/lib/python3.11/site-packages (from Django==4.2.dev20220929112014) (0.4.4)
+Building wheels for collected packages: Django
+  Building editable for Django (pyproject.toml): started
+  Building editable for Django (pyproject.toml): finished with status 'done'
+  Created wheel for Django: filename=Django-4.2.dev20220929112014-0.editable-py3-none-any.whl size=27101 sha256=281907f5fa88207cffca06ac1eaab0075ec2799c5f1ffd9083924ac925b52c94
+  Stored in directory: /private/var/folders/3m/3dmm_ry91nqff_w2hrcv3zfc0000gn/T/pip-ephem-wheel-cache-jhdkzyk8/wheels/c3/73/74/0d08e57c7518b6a640ce55882f0e7b0c82e7e780c365f0ce12
+Successfully built Django
+Installing collected packages: Django
+  Attempting uninstall: Django
+    Found existing installation: Django 4.2.dev20221118091331
+    Uninstalling Django-4.2.dev20221118091331:
+      Successfully uninstalled Django-4.2.dev20221118091331
+Successfully installed Django-4.2.dev20220929112014
+
+Std. Error: 
+
+>>>>> Init Succeeded
+>>>>> Applied Patch (test)
+>>>>> Applied Patch (pred)
+Test Script: source /Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpjw_brqx5/miniconda3/bin/activate django__django__4.2 && echo 'activate successful' && ./tests/runtests.py --verbosity 2 async.tests;
+Output:
+activate successful
+Testing against Django installed in '/Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpxhdwcj5k/django__django__4.2/django' with up to 8 processes
+Importing application async
+Found 9 test(s).
+Skipping setup of unused database(s): default, other.
+System check identified no issues (0 silenced).
+Importing application async
+Importing application async
+Importing application async
+Importing application async
+test_async_unsafe (async.tests.AsyncUnsafeTest.test_async_unsafe) ... ok
+test_async_unsafe_suppressed (async.tests.AsyncUnsafeTest.test_async_unsafe_suppressed)
+Utility class which turns an awaitable that only works on the thread with ... ok
+test_caches_local (async.tests.CacheTest.test_caches_local) ... ok
+test_base_view_class_is_sync (async.tests.ViewTests.test_base_view_class_is_sync)
+View and by extension any subclasses that don't define handlers are ... ok
+test_http_method_not_allowed_responds_correctly (async.tests.ViewTests.test_http_method_not_allowed_responds_correctly) ... 
+  test_http_method_not_allowed_responds_correctly (async.tests.ViewTests.test_http_method_not_allowed_responds_correctly) [<object object at 0x109e65eb0>] (view_cls=<class 'async.tests.AsyncView'>, is_coroutine=True) ... FAIL
+test_mixed_views_raise_error (async.tests.ViewTests.test_mixed_views_raise_error) ... ok
+test_options_handler_responds_correctly (async.tests.ViewTests.test_options_handler_responds_correctly) ... ok
+test_views_are_correctly_marked (async.tests.ViewTests.test_views_are_correctly_marked) ... ok
+test_get_async_connection (async.tests.DatabaseConnectionTest.test_get_async_connection) ... ok
+
+======================================================================
+FAIL: test_http_method_not_allowed_responds_correctly (async.tests.ViewTests.test_http_method_not_allowed_responds_correctly) [<object object at 0x109e65eb0>] (view_cls=<class 'async.tests.AsyncView'>, is_coroutine=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpjw_brqx5/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpjw_brqx5/miniconda3/lib/python3.11/unittest/case.py", line 538, in subTest
+    yield
+  File "/Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpxhdwcj5k/django__django__4.2/tests/async/tests.py", line 132, in test_http_method_not_allowed_responds_correctly
+    self.assertIs(
+  File "/Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpjw_brqx5/miniconda3/lib/python3.11/unittest/case.py", line 1154, in assertIs
+    self.fail(self._formatMessage(msg, standardMsg))
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpjw_brqx5/miniconda3/lib/python3.11/unittest/case.py", line 703, in fail
+    raise self.failureException(msg)
+    ^^^^^^^^^^^^^^^^^
+AssertionError: False is not True
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.588s
+
+FAILED (failures=1)
+
+>>>>> Some Tests Failed

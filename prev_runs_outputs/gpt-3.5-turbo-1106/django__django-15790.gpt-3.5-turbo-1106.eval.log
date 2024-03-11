@@ -1,0 +1,108 @@
+Task Metadata:
+	- Instance ID: django__django-15790
+	- Testbed: /Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpxhdwcj5k/django__django__4.2
+	- Virtual Env.: django__django__4.2
+	- Evaluation Model: gpt-3.5-turbo-1106
+>>>>> Applied Patch (pred_try)
+>>>>> Applied Patch (pred_try)
+Installation Command: source /Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpjw_brqx5/miniconda3/bin/activate django__django__4.2 && echo 'activate successful' && python -m pip install -e .
+Std. Output: activate successful
+Obtaining file:///Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpxhdwcj5k/django__django__4.2
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: asgiref>=3.5.2 in /Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpjw_brqx5/miniconda3/lib/python3.11/site-packages (from Django==4.2.dev20220623091235) (3.7.2)
+Requirement already satisfied: sqlparse>=0.2.2 in /Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpjw_brqx5/miniconda3/lib/python3.11/site-packages (from Django==4.2.dev20220623091235) (0.4.4)
+Building wheels for collected packages: Django
+  Building editable for Django (pyproject.toml): started
+  Building editable for Django (pyproject.toml): finished with status 'done'
+  Created wheel for Django: filename=Django-4.2.dev20220623091235-0.editable-py3-none-any.whl size=27009 sha256=b4e86d26bb8f02dc27feca4e520271995c22bc68af336eeb992570aed65669f7
+  Stored in directory: /private/var/folders/3m/3dmm_ry91nqff_w2hrcv3zfc0000gn/T/pip-ephem-wheel-cache-npp93ccz/wheels/c3/73/74/0d08e57c7518b6a640ce55882f0e7b0c82e7e780c365f0ce12
+Successfully built Django
+Installing collected packages: Django
+  Attempting uninstall: Django
+    Found existing installation: Django 4.2.dev20220717112353
+    Uninstalling Django-4.2.dev20220717112353:
+      Successfully uninstalled Django-4.2.dev20220717112353
+Successfully installed Django-4.2.dev20220623091235
+
+Std. Error: 
+
+>>>>> Init Succeeded
+>>>>> Applied Patch (test)
+>>>>> Applied Patch (pred)
+Test Script: source /Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpjw_brqx5/miniconda3/bin/activate django__django__4.2 && echo 'activate successful' && ./tests/runtests.py --verbosity 2 check_framework.test_templates;
+Output:
+activate successful
+Testing against Django installed in '/Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpxhdwcj5k/django__django__4.2/django' with up to 8 processes
+Importing application check_framework
+Found 13 test(s).
+Skipping setup of unused database(s): default, other.
+System check identified no issues (0 silenced).
+Importing application check_framework
+Importing application check_framework
+Importing application check_framework
+test_app_dirs_and_loaders (check_framework.test_templates.CheckTemplateSettingsAppDirsTest.test_app_dirs_and_loaders)
+Error if template loaders are specified and APP_DIRS is True. ... ok
+test_app_dirs_removed (check_framework.test_templates.CheckTemplateSettingsAppDirsTest.test_app_dirs_removed) ... ok
+test_loaders_removed (check_framework.test_templates.CheckTemplateSettingsAppDirsTest.test_loaders_removed) ... ok
+test_string_if_invalid_both_are_strings (check_framework.test_templates.CheckTemplateStringIfInvalidTest.test_string_if_invalid_both_are_strings) ... ok
+test_string_if_invalid_first_is_string (check_framework.test_templates.CheckTemplateStringIfInvalidTest.test_string_if_invalid_first_is_string) ... ok
+test_string_if_invalid_not_specified (check_framework.test_templates.CheckTemplateStringIfInvalidTest.test_string_if_invalid_not_specified) ... ok
+test_string_if_invalid_not_string (check_framework.test_templates.CheckTemplateStringIfInvalidTest.test_string_if_invalid_not_string) ... ok
+test_template_tags_same_library_in_installed_apps_libraries (check_framework.test_templates.CheckTemplateTagLibrariesWithSameName.test_template_tags_same_library_in_installed_apps_libraries) ... FAIL
+test_template_tags_with_different_library_name (check_framework.test_templates.CheckTemplateTagLibrariesWithSameName.test_template_tags_with_different_library_name) ... ok
+test_template_tags_with_different_name (check_framework.test_templates.CheckTemplateTagLibrariesWithSameName.test_template_tags_with_different_name) ... ok
+test_template_tags_with_same_library_name (check_framework.test_templates.CheckTemplateTagLibrariesWithSameName.test_template_tags_with_same_library_name) ... ok
+test_template_tags_with_same_library_name_and_module_name (check_framework.test_templates.CheckTemplateTagLibrariesWithSameName.test_template_tags_with_same_library_name_and_module_name) ... ok
+test_template_tags_with_same_name (check_framework.test_templates.CheckTemplateTagLibrariesWithSameName.test_template_tags_with_same_name) ... ok
+
+======================================================================
+FAIL: test_template_tags_same_library_in_installed_apps_libraries (check_framework.test_templates.CheckTemplateTagLibrariesWithSameName.test_template_tags_same_library_in_installed_apps_libraries)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpjw_brqx5/miniconda3/lib/python3.11/unittest/case.py", line 57, in testPartExecutor
+    yield
+  File "/Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpjw_brqx5/miniconda3/lib/python3.11/unittest/case.py", line 623, in run
+    self._callTestMethod(testMethod)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpjw_brqx5/miniconda3/lib/python3.11/unittest/case.py", line 579, in _callTestMethod
+    if method() is not None:
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpxhdwcj5k/django__django__4.2/django/test/utils.py", line 460, in inner
+    return func(*args, **kwargs)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpxhdwcj5k/django__django__4.2/tests/check_framework/test_templates.py", line 172, in test_template_tags_same_library_in_installed_apps_libraries
+    self.assertEqual(check_for_template_tags_with_the_same_name(None), [])
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpjw_brqx5/miniconda3/lib/python3.11/unittest/case.py", line 873, in assertEqual
+    assertion_func(first, second, msg=msg)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpjw_brqx5/miniconda3/lib/python3.11/unittest/case.py", line 1079, in assertListEqual
+    self.assertSequenceEqual(list1, list2, msg, seq_type=list)
+    ^^^^^^^^^^^^^^^^^
+  File "/Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpjw_brqx5/miniconda3/lib/python3.11/unittest/case.py", line 1061, in assertSequenceEqual
+    self.fail(msg)
+  File "/Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpjw_brqx5/miniconda3/lib/python3.11/unittest/case.py", line 703, in fail
+    raise self.failureException(msg)
+    ^^^^^^^^^^^^^^^^^
+AssertionError: Lists differ: [<Error: level=40, msg="'same_tags' is use[229 chars]03'>] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+<Error: level=40, msg="'same_tags' is used for multiple template tag modules: 'check_framework.template_test_apps.same_tags_app_1.templatetags.same_tags', 'check_framework.template_test_apps.same_tags_app_1.templatetags.same_tags'", hint=None, obj=None, id='templates.E003'>
+
+- [<Error: level=40, msg="'same_tags' is used for multiple template tag modules: 'check_framework.template_test_apps.same_tags_app_1.templatetags.same_tags', 'check_framework.template_test_apps.same_tags_app_1.templatetags.same_tags'", hint=None, obj=None, id='templates.E003'>]
++ []
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.498s
+
+FAILED (failures=1)
+
+>>>>> Some Tests Failed

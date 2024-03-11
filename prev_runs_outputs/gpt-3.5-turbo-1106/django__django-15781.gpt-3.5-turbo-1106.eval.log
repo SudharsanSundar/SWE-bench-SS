@@ -1,0 +1,23 @@
+Task Metadata:
+	- Instance ID: django__django-15781
+	- Testbed: /Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpxhdwcj5k/django__django__4.2
+	- Virtual Env.: django__django__4.2
+	- Evaluation Model: gpt-3.5-turbo-1106
+>>>>> Patch Apply Failed; (pred_try)
+Output:
+/Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpxhdwcj5k/temp_django__django-15781_pred_try.patch:24: trailing whitespace.
+    def add_usage(self, usage, actions, *args, **kwargs):        
+Checking patch django/core/management/base.py...
+error: while searching for:
+import os
+import sys
+from argparse import ArgumentParser, HelpFormatter
+
+import django
+from django.core import checks
+
+error: patch failed: django/core/management/base.py:20
+error: django/core/management/base.py: patch does not apply
+>>>>> Patch Apply Failed; (pred_minimal_try)
+Output:
+error: patch fragment without header at line 6: @@ -108,0 +109,1 @@

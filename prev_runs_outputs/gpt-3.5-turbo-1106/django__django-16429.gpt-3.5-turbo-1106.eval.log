@@ -1,0 +1,30 @@
+Task Metadata:
+	- Instance ID: django__django-16429
+	- Testbed: /Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpxhdwcj5k/django__django__4.2
+	- Virtual Env.: django__django__4.2
+	- Evaluation Model: gpt-3.5-turbo-1106
+>>>>> Patch Apply Failed; (pred_try)
+Output:
+/Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpxhdwcj5k/temp_django__django-16429_pred_try.patch:18: trailing whitespace.
+        pivot_year, 
+Checking patch django/utils/timesince.py...
+error: while searching for:
+    total_months = (now.year - d.year) * 12 + (now.month - d.month)
+    if d.day > now.day or (d.day == now.day and d.time() > now.time()):
+        total_months -= 1
+    years, months = divmod(total_months, 12)
+    pivot_year = d.year + years
+    pivot_month = d.month + months
+    if pivot_month > 12:
+
+error: patch failed: django/utils/timesince.py:78
+error: django/utils/timesince.py: patch does not apply
+>>>>> Patch Apply Failed; (pred_minimal_try)
+Output:
+Checking patch django/utils/timesince.py...
+error: while searching for:
+    years, months = divmod(total_months, 12)
+    pivot_year = d.year + years
+
+error: patch failed: django/utils/timesince.py:81
+error: django/utils/timesince.py: patch does not apply

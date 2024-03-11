@@ -1,0 +1,217 @@
+Task Metadata:
+	- Instance ID: pytest-dev__pytest-11160
+	- Testbed: /Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/pytest-dev__pytest/8.0/tmp5g3td4c8/pytest-dev__pytest__8.0
+	- Virtual Env.: pytest-dev__pytest__8.0
+	- Evaluation Model: gpt-3.5-turbo-1106
+>>>>> Patch Apply Failed; (pred_try)
+Output:
+Checking patch src/_pytest/recwarn.py...
+error: while searching for:
+    def pop(self, cls: Type[Warning]) -> "warnings.WarningMessage":
+        """Pop the first recorded warning, raise exception if not exists."""
+        for i, w in enumerate(self._list):
+            if issubclass(w.category, cls):
+                return self._list.pop(i)
+        __tracebackhide__ = True
+        raise AssertionError(f"{cls!r} not found in warning list")
+
+error: patch failed: src/_pytest/recwarn.py:208
+error: src/_pytest/recwarn.py: patch does not apply
+>>>>> Applied Patch (pred_minimal_try)
+>>>>> Applied Patch (pred_minimal_try)
+Installation Command: source /Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/pytest-dev__pytest/8.0/tmpvctg9876/miniconda3/bin/activate pytest-dev__pytest__8.0 && echo 'activate successful' && pip install -e .
+Std. Output: activate successful
+Obtaining file:///Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/pytest-dev__pytest/8.0/tmp5g3td4c8/pytest-dev__pytest__8.0
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Installing backend dependencies: started
+  Installing backend dependencies: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Collecting iniconfig (from pytest==8.0.0.dev53+g6995257cf)
+  Using cached iniconfig-2.0.0-py3-none-any.whl.metadata (2.6 kB)
+Requirement already satisfied: packaging in /Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/pytest-dev__pytest/8.0/tmpvctg9876/miniconda3/lib/python3.11/site-packages (from pytest==8.0.0.dev53+g6995257cf) (23.1)
+Requirement already satisfied: pluggy<2.0,>=0.12 in /Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/pytest-dev__pytest/8.0/tmpvctg9876/miniconda3/lib/python3.11/site-packages (from pytest==8.0.0.dev53+g6995257cf) (1.0.0)
+Downloading iniconfig-2.0.0-py3-none-any.whl (5.9 kB)
+Building wheels for collected packages: pytest
+  Building editable for pytest (pyproject.toml): started
+  Building editable for pytest (pyproject.toml): finished with status 'done'
+  Created wheel for pytest: filename=pytest-8.0.0.dev53+g6995257cf-0.editable-py3-none-any.whl size=5277 sha256=e478e373fe775a56f8c3abfe83bf48b621c04230f9c5b40e04cb4aa55423a2cc
+  Stored in directory: /private/var/folders/3m/3dmm_ry91nqff_w2hrcv3zfc0000gn/T/pip-ephem-wheel-cache-u54q6b1v/wheels/c4/12/fa/bbfb337b0070c3f04ee569d84cd7296b64bc883d0e884cac1e
+Successfully built pytest
+Installing collected packages: iniconfig, pytest
+Successfully installed iniconfig-2.0.0 pytest-8.0.0.dev53+g6995257cf
+
+Std. Error: 
+
+>>>>> Init Succeeded
+>>>>> Applied Patch (test)
+>>>>> Applied Patch (pred_minimal)
+Test Script: source /Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/pytest-dev__pytest/8.0/tmpvctg9876/miniconda3/bin/activate pytest-dev__pytest__8.0 && echo 'activate successful' && pytest -rA testing/test_recwarn.py;
+Output:
+activate successful
+============================= test session starts ==============================
+platform darwin -- Python 3.11.5, pytest-8.0.0.dev53+g6995257cf, pluggy-1.0.0
+rootdir: /Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/pytest-dev__pytest/8.0/tmp5g3td4c8/pytest-dev__pytest__8.0
+configfile: pyproject.toml
+collected 49 items
+
+testing/test_recwarn.py F...FF.........................................F [ 97%]
+.                                                                        [100%]
+
+=================================== FAILURES ===================================
+___________________________ test_recwarn_stacklevel ____________________________
+
+recwarn = WarningsRecorder(record=True)
+
+    def test_recwarn_stacklevel(recwarn: WarningsRecorder) -> None:
+        warnings.warn("hello")
+>       warn = recwarn.pop()
+E       AssertionError: <class 'Warning'> not found in warning list
+
+testing/test_recwarn.py:13: AssertionError
+___________ TestSubclassWarningPop.test_pop_finds_best_inexact_match ___________
+
+self = <test_recwarn.TestSubclassWarningPop object at 0x10a687290>
+
+    def test_pop_finds_best_inexact_match(self):
+        with pytest.warns(self.ParentWarning) as record:
+            self.raise_warnings_from_list(
+                [self.ChildOfChildWarning, self.ChildWarning, self.ChildOfChildWarning]
+            )
+    
+>       _warn = record.pop(self.ParentWarning)
+E       AssertionError: <class 'test_recwarn.TestSubclassWarningPop.ParentWarning'> not found in warning list
+
+testing/test_recwarn.py:79: AssertionError
+__________________ TestWarningsRecorderChecker.test_recording __________________
+
+self = <test_recwarn.TestWarningsRecorderChecker object at 0x10a687e10>
+
+    def test_recording(self) -> None:
+        rec = WarningsRecorder(_ispytest=True)
+        with rec:
+            assert not rec.list
+            warnings.warn_explicit("hello", UserWarning, "xyz", 13)
+            assert len(rec.list) == 1
+            warnings.warn(DeprecationWarning("hello"))
+            assert len(rec.list) == 2
+>           warn = rec.pop()
+E           AssertionError: <class 'Warning'> not found in warning list
+
+testing/test_recwarn.py:92: AssertionError
+___________________________ test_recwarn_functional ____________________________
+
+pytester = <Pytester PosixPath('/private/var/folders/3m/3dmm_ry91nqff_w2hrcv3zfc0000gn/T/pytest-of-sudharsansundar/pytest-0/test_recwarn_functional0')>
+
+    def test_recwarn_functional(pytester: Pytester) -> None:
+        pytester.makepyfile(
+            """
+            import warnings
+            def test_method(recwarn):
+                warnings.warn("hello")
+                warn = recwarn.pop()
+                assert isinstance(warn.message, UserWarning)
+        """
+        )
+        reprec = pytester.inline_run()
+>       reprec.assertoutcome(passed=1)
+E       AssertionError: ([], [], [<TestReport 'test_recwarn_functional.py::test_method' when='call' outcome='failed'>])
+E       assert {'failed': 1,... 'skipped': 0} == {'failed': 0,... 'skipped': 0}
+E         Omitting 1 identical items, use -vv to show
+E         Differing items:
+E         {'failed': 1} != {'failed': 0}
+E         {'passed': 0} != {'passed': 1}
+E         Use -v to get more diff
+
+/Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/pytest-dev__pytest/8.0/tmp5g3td4c8/pytest-dev__pytest__8.0/testing/test_recwarn.py:28: AssertionError
+----------------------------- Captured stdout call -----------------------------
+============================= test session starts ==============================
+platform darwin -- Python 3.11.5, pytest-8.0.0.dev53+g6995257cf, pluggy-1.0.0
+rootdir: /private/var/folders/3m/3dmm_ry91nqff_w2hrcv3zfc0000gn/T/pytest-of-sudharsansundar/pytest-0/test_recwarn_functional0
+collected 1 item
+
+test_recwarn_functional.py F                                             [100%]
+
+=================================== FAILURES ===================================
+_________________________________ test_method __________________________________
+
+recwarn = WarningsRecorder(record=True)
+
+    def test_method(recwarn):
+        warnings.warn("hello")
+>       warn = recwarn.pop()
+E       AssertionError: <class 'Warning'> not found in warning list
+
+test_recwarn_functional.py:4: AssertionError
+=========================== short test summary info ============================
+FAILED test_recwarn_functional.py::test_method - AssertionError: <class 'Warn...
+============================== 1 failed in 0.02s ===============================
+==================================== PASSES ====================================
+__________________________ TestWarns.test_double_test __________________________
+----------------------------- Captured stdout call -----------------------------
+============================= test session starts ==============================
+platform darwin -- Python 3.11.5, pytest-8.0.0.dev53+g6995257cf, pluggy-1.0.0
+rootdir: /private/var/folders/3m/3dmm_ry91nqff_w2hrcv3zfc0000gn/T/pytest-of-sudharsansundar/pytest-0/test_double_test0
+collected 2 items
+
+test_double_test.py ..                                                   [100%]
+
+============================== 2 passed in 0.01s ===============================
+=========================== short test summary info ============================
+PASSED testing/test_recwarn.py::test_recwarn_captures_deprecation_warning
+PASSED testing/test_recwarn.py::TestSubclassWarningPop::test_pop_finds_exact_match
+PASSED testing/test_recwarn.py::TestSubclassWarningPop::test_pop_raises_if_no_match
+PASSED testing/test_recwarn.py::TestWarningsRecorderChecker::test_warn_stacklevel
+PASSED testing/test_recwarn.py::TestWarningsRecorderChecker::test_typechecking
+PASSED testing/test_recwarn.py::TestWarningsRecorderChecker::test_invalid_enter_exit
+PASSED testing/test_recwarn.py::TestDeprecatedCall::test_deprecated_call_raises
+PASSED testing/test_recwarn.py::TestDeprecatedCall::test_deprecated_call
+PASSED testing/test_recwarn.py::TestDeprecatedCall::test_deprecated_call_ret
+PASSED testing/test_recwarn.py::TestDeprecatedCall::test_deprecated_call_preserves
+PASSED testing/test_recwarn.py::TestDeprecatedCall::test_deprecated_explicit_call_raises
+PASSED testing/test_recwarn.py::TestDeprecatedCall::test_deprecated_explicit_call
+PASSED testing/test_recwarn.py::TestDeprecatedCall::test_deprecated_call_no_warning[context_manager]
+PASSED testing/test_recwarn.py::TestDeprecatedCall::test_deprecated_call_no_warning[call]
+PASSED testing/test_recwarn.py::TestDeprecatedCall::test_deprecated_call_modes[True-context_manager-PendingDeprecationWarning]
+PASSED testing/test_recwarn.py::TestDeprecatedCall::test_deprecated_call_modes[True-context_manager-DeprecationWarning]
+PASSED testing/test_recwarn.py::TestDeprecatedCall::test_deprecated_call_modes[True-call-PendingDeprecationWarning]
+PASSED testing/test_recwarn.py::TestDeprecatedCall::test_deprecated_call_modes[True-call-DeprecationWarning]
+PASSED testing/test_recwarn.py::TestDeprecatedCall::test_deprecated_call_modes[False-context_manager-PendingDeprecationWarning]
+PASSED testing/test_recwarn.py::TestDeprecatedCall::test_deprecated_call_modes[False-context_manager-DeprecationWarning]
+PASSED testing/test_recwarn.py::TestDeprecatedCall::test_deprecated_call_modes[False-call-PendingDeprecationWarning]
+PASSED testing/test_recwarn.py::TestDeprecatedCall::test_deprecated_call_modes[False-call-DeprecationWarning]
+PASSED testing/test_recwarn.py::TestDeprecatedCall::test_deprecated_call_specificity
+PASSED testing/test_recwarn.py::TestDeprecatedCall::test_deprecated_call_supports_match
+PASSED testing/test_recwarn.py::TestWarns::test_check_callable
+PASSED testing/test_recwarn.py::TestWarns::test_several_messages
+PASSED testing/test_recwarn.py::TestWarns::test_function
+PASSED testing/test_recwarn.py::TestWarns::test_warning_tuple
+PASSED testing/test_recwarn.py::TestWarns::test_as_contextmanager
+PASSED testing/test_recwarn.py::TestWarns::test_record
+PASSED testing/test_recwarn.py::TestWarns::test_record_only
+PASSED testing/test_recwarn.py::TestWarns::test_record_only_none_deprecated_warn
+PASSED testing/test_recwarn.py::TestWarns::test_record_by_subclass
+PASSED testing/test_recwarn.py::TestWarns::test_match_regex
+PASSED testing/test_recwarn.py::TestWarns::test_one_from_multiple_warns
+PASSED testing/test_recwarn.py::TestWarns::test_none_of_multiple_warns
+PASSED testing/test_recwarn.py::TestWarns::test_can_capture_previously_warned
+PASSED testing/test_recwarn.py::TestWarns::test_warns_context_manager_with_kwargs
+PASSED testing/test_recwarn.py::TestWarns::test_re_emit_single
+PASSED testing/test_recwarn.py::TestWarns::test_re_emit_multiple
+PASSED testing/test_recwarn.py::TestWarns::test_re_emit_match_single
+PASSED testing/test_recwarn.py::TestWarns::test_re_emit_match_multiple
+PASSED testing/test_recwarn.py::TestWarns::test_re_emit_non_match_single
+PASSED testing/test_recwarn.py::TestWarns::test_catch_warning_within_raise
+PASSED testing/test_recwarn.py::TestWarns::test_double_test
+FAILED testing/test_recwarn.py::test_recwarn_stacklevel - AssertionError: <cl...
+FAILED testing/test_recwarn.py::TestSubclassWarningPop::test_pop_finds_best_inexact_match
+FAILED testing/test_recwarn.py::TestWarningsRecorderChecker::test_recording
+FAILED testing/test_recwarn.py::test_recwarn_functional - AssertionError: ([]...
+========================= 4 failed, 45 passed in 0.60s =========================
+
+>>>>> Some Tests Failed

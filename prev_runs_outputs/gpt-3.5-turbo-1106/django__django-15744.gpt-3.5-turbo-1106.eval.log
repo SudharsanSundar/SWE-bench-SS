@@ -1,0 +1,85 @@
+Task Metadata:
+	- Instance ID: django__django-15744
+	- Testbed: /Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpxhdwcj5k/django__django__4.2
+	- Virtual Env.: django__django__4.2
+	- Evaluation Model: gpt-3.5-turbo-1106
+>>>>> Applied Patch (pred_try)
+>>>>> Applied Patch (pred_try)
+Installation Command: source /Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpjw_brqx5/miniconda3/bin/activate django__django__4.2 && echo 'activate successful' && python -m pip install -e .
+Std. Output: activate successful
+Obtaining file:///Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpxhdwcj5k/django__django__4.2
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Requirement already satisfied: asgiref>=3.4.1 in /Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpjw_brqx5/miniconda3/lib/python3.11/site-packages (from Django==4.2.dev20220531040939) (3.7.2)
+Requirement already satisfied: sqlparse>=0.2.2 in /Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpjw_brqx5/miniconda3/lib/python3.11/site-packages (from Django==4.2.dev20220531040939) (0.4.4)
+Building wheels for collected packages: Django
+  Building editable for Django (pyproject.toml): started
+  Building editable for Django (pyproject.toml): finished with status 'done'
+  Created wheel for Django: filename=Django-4.2.dev20220531040939-0.editable-py3-none-any.whl size=26932 sha256=22f3ad678e27dff5bfe80bcd7069145bb72693e288f8d04553e055e7109787d1
+  Stored in directory: /private/var/folders/3m/3dmm_ry91nqff_w2hrcv3zfc0000gn/T/pip-ephem-wheel-cache-u2pntpny/wheels/c3/73/74/0d08e57c7518b6a640ce55882f0e7b0c82e7e780c365f0ce12
+Successfully built Django
+Installing collected packages: Django
+  Attempting uninstall: Django
+    Found existing installation: Django 4.2.dev20220603043211
+    Uninstalling Django-4.2.dev20220603043211:
+      Successfully uninstalled Django-4.2.dev20220603043211
+Successfully installed Django-4.2.dev20220531040939
+
+Std. Error: 
+
+>>>>> Init Succeeded
+>>>>> Applied Patch (test)
+>>>>> Applied Patch (pred)
+Test Script: source /Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpjw_brqx5/miniconda3/bin/activate django__django__4.2 && echo 'activate successful' && ./tests/runtests.py --verbosity 2 asgi.tests asgi.urls;
+Output:
+activate successful
+Testing against Django installed in '/Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpxhdwcj5k/django__django__4.2/django' with up to 8 processes
+Importing application asgi
+Found 11 test(s).
+Skipping setup of unused database(s): default, other.
+System check identified no issues (0 silenced).
+test_concurrent_async_uses_multiple_thread_pools (asgi.tests.ASGITest.test_concurrent_async_uses_multiple_thread_pools) ... ok
+test_disconnect (asgi.tests.ASGITest.test_disconnect) ... ok
+test_file_response (asgi.tests.ASGITest.test_file_response)
+Makes sure that FileResponse works over ASGI. ... ok
+test_get_asgi_application (asgi.tests.ASGITest.test_get_asgi_application)
+get_asgi_application() returns a functioning ASGI callable. ... ok
+test_get_query_string (asgi.tests.ASGITest.test_get_query_string) ... ok
+test_headers (asgi.tests.ASGITest.test_headers) ... ok
+test_non_unicode_query_string (asgi.tests.ASGITest.test_non_unicode_query_string) ... ok
+test_post_body (asgi.tests.ASGITest.test_post_body) ... FAIL
+test_request_lifecycle_signals_dispatched_with_thread_sensitive (asgi.tests.ASGITest.test_request_lifecycle_signals_dispatched_with_thread_sensitive) ... ok
+test_static_file_response (asgi.tests.ASGITest.test_static_file_response) ... ok
+test_wrong_connection_type (asgi.tests.ASGITest.test_wrong_connection_type) ... ok
+
+======================================================================
+FAIL: test_post_body (asgi.tests.ASGITest.test_post_body)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpjw_brqx5/miniconda3/lib/python3.11/site-packages/asgiref/sync.py", line 277, in __call__
+    return call_result.result()
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpjw_brqx5/miniconda3/lib/python3.11/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpjw_brqx5/miniconda3/lib/python3.11/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpjw_brqx5/miniconda3/lib/python3.11/site-packages/asgiref/sync.py", line 353, in main_wrap
+    result = await self.awaitable(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpxhdwcj5k/django__django__4.2/tests/asgi/tests.py", line 173, in test_post_body
+    self.assertEqual(response_start["status"], 200)
+AssertionError: 500 != 200
+
+----------------------------------------------------------------------
+Ran 11 tests in 2.079s
+
+FAILED (failures=1)
+
+>>>>> Some Tests Failed

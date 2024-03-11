@@ -1,0 +1,18 @@
+Task Metadata:
+	- Instance ID: sphinx-doc__sphinx-9246
+	- Testbed: /Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/sphinx-doc__sphinx/4.0/tmpnjthonzp/sphinx-doc__sphinx__4.0
+	- Virtual Env.: sphinx-doc__sphinx__4.0
+	- Evaluation Model: gpt-3.5-turbo-1106
+>>>>> Patch Apply Failed; (pred_try)
+Output:
+error: patch fragment without header at line 13: @@ -120,7 +120,7 @@
+>>>>> Patch Apply Failed; (pred_minimal_try)
+Output:
+Checking patch sphinx/transforms/post_transforms/__init__.py...
+Hunk #1 succeeded at 77 (offset -47 lines).
+error: while searching for:
+            typ = node['reftype']
+            target = node['reftarget']
+
+error: patch failed: sphinx/transforms/post_transforms/__init__.py:124
+error: sphinx/transforms/post_transforms/__init__.py: patch does not apply

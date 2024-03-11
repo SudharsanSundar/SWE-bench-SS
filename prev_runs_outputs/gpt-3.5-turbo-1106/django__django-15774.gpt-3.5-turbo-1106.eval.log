@@ -1,0 +1,30 @@
+Task Metadata:
+	- Instance ID: django__django-15774
+	- Testbed: /Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpxhdwcj5k/django__django__4.2
+	- Virtual Env.: django__django__4.2
+	- Evaluation Model: gpt-3.5-turbo-1106
+>>>>> Patch Apply Failed; (pred_try)
+Output:
+/Users/sudharsansundar/SWE-bench-SS/testbed/gpt-3.5-turbo-1106/django__django/4.2/tmpxhdwcj5k/temp_django__django-15774_pred_try.patch:8: trailing whitespace.
+    ([A-Za-z]{1,8}(?:-[A-Za-z0-9]{1,8})*|\*) 
+Checking patch django/utils/translation/trans_real.py...
+error: while searching for:
+accept_language_re = _lazy_re_compile(
+    r"""
+    # "en", "en-au", "x-y-z", "es-419", "*"
+    ([A-Za-z]{1,8}(?:-[A-Za-z0-9]{1,8})*|\*)
+    # Optional "q=1.00", "q=0.8"
+    (?:\s*;\s*q=(0(?:\.[0-9]{,3})?|1(?:\.0{,3})?))?
+    # Multiple accepts per header.
+
+error: patch failed: django/utils/translation/trans_real.py:33
+error: django/utils/translation/trans_real.py: patch does not apply
+>>>>> Patch Apply Failed; (pred_minimal_try)
+Output:
+Checking patch django/utils/translation/trans_real.py...
+error: while searching for:
+    ([A-Za-z]{1,8}(?:-[A-Za-z0-9]{1,8})*|\*)
+    # Optional "q=1.00", "q=0.8"
+
+error: patch failed: django/utils/translation/trans_real.py:36
+error: django/utils/translation/trans_real.py: patch does not apply

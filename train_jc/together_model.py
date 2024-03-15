@@ -4,15 +4,11 @@
 import json
 import anthropic
 import together
+import openai
 import os
 
-
-#client = OpenAI(api_key=OAI_API_KEY)
-#togClient = OpenAI(api_key=TOG_API_KEY, base_url='https://api.together.xyz')
-#antClient = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
-### input 
-together.api_key = "b2eb92f209bb76db57849e5cb93c6daa3cd3b67cbc251e37f7e6aa1c22f898d2"
-
+TOG_API_KEY = "b2eb92f209bb76db57849e5cb93c6daa3cd3b67cbc251e37f7e6aa1c22f898d2"
+togClient = openai.OpenAI(api_key=TOG_API_KEY, base_url='https://api.together.xyz')
 
 
 """

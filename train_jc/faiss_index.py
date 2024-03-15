@@ -4,7 +4,6 @@ import voyageai
 vo = voyageai.Client(api_key="pa-eHDxVlgbEIRYCEU7gmvgjT1FpX2OooksxB2cv2JvXjA")
 
 
-
 """
 Object for creating Voyage embeddings.
 """
@@ -25,7 +24,6 @@ class FaissIndex:
         self.chunks = chunks
         embeddings = []
         for chunk in chunks:
-
             embeddings.append(self.model.create_embedding(chunk))
 
         self.embeddings = np.array(embeddings)
@@ -33,8 +31,9 @@ class FaissIndex:
         self.k = k
 
     def build(self):
-        print("PRINTING self.embeddings.shape\n")
-        #print(self.embeddings.shape)
+        # print("PRINTING self.embeddings.shape\n")
+        # print(self.embeddings.shape)
+
         d = self.embeddings.shape[1]
         self.index = faiss.IndexFlatIP(d)
         self.index.add(self.embeddings)

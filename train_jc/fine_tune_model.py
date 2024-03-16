@@ -2,7 +2,8 @@ import together
 import pprint
 
 ppr = pprint.PrettyPrinter()
-together.api_key = "b2eb92f209bb76db57849e5cb93c6daa3cd3b67cbc251e37f7e6aa1c22f898d2"
+# together.api_key = "b2eb92f209bb76db57849e5cb93c6daa3cd3b67cbc251e37f7e6aa1c22f898d2" # Jess
+together.api_key = "146706bab46d0101232eb1519664fb6e53c5be853f85aae3cfa9abd266e9434d" # SS
 
 
 def check_data_format(path):
@@ -60,7 +61,7 @@ def main():
     # Start fting
     train_file_id = resp['id']
     resp, ft_id = start_ft_job(train_file=train_file_id,
-                               # model='mistralai/Mistral-7B-Instruct-v0.2',
+                               model='mistralai/Mixtral-8x7B-Instruct-v0.1',
                                # epochs=3,
                                # ckpts=1,
                                # batch=4,

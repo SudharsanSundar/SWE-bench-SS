@@ -24,7 +24,7 @@ from transformers import AutoTokenizer
 '''
 Commands:
 
-export ANTHROPIC_API_KEY=<your key>
+export TOGETHER_API_KEY=<your key>
 
 python inference/run_tog_api.py --dataset_name_or_path princeton-nlp/SWE-bench_oracle --model_name_or_path chudnovskyj@gmail.com/Mistral-7B-Instruct-v0.2-swe-bench-job-2024-03-15-16-43-13 --output_dir ./outputs
 
